@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://your-domain.com/sitemap.xml
+
+# Disallow common non-content paths
+Disallow: /scripts/
+Disallow: /styles/
+Disallow: /*.js$
+Disallow: /*.css$
+
+# Allow important assets
+Allow: /assets/
+Allow: /favicon.ico

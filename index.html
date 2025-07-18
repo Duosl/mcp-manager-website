@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP Manager - 您的私人 MCP 管理工具</title>
+    <meta name="description" content="一款专为 Model Context Protocol (MCP) 配置管理而设计的浏览器扩展，帮助您高效地收集、存储、管理和使用各种 MCP 服务器配置。">
+    <meta name="keywords" content="MCP Manager, Model Context Protocol, Chrome Extension, 配置管理, AI工具">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="MCP Manager - 您的私人 MCP 管理工具">
+    <meta property="og:description" content="专业的 MCP 配置管理浏览器扩展">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./assets/og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="./assets/logo.png" alt="MCP Manager" class="logo">
+                <span class="brand-text">MCP Manager</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">功能特性</a>
+                <a href="#how-it-works" class="nav-link">工作原理</a>
+                <a href="#download" class="nav-link">下载安装</a>
+                <a href="#docs" class="nav-link">文档</a>
+                <a href="https://github.com/your-username/mcp-manager-extension" class="nav-link" target="_blank">GitHub</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Floating particles -->
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        您的私人 <span class="gradient-text" data-text="MCP 管理工具">MCP 管理工具</span>
+                    </h1>
+                    <p class="hero-description">
+                        一款专为 Model Context Protocol (MCP) 配置管理而设计的浏览器扩展，
+                        帮助您高效地收集、存储、管理和使用各种 MCP 服务器配置。
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#download" class="btn btn-primary">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7,10 12,15 17,10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                            立即下载
+                        </a>
+                        <a href="#features" class="btn btn-secondary">了解更多</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-card">
+                        <div class="card-header">
+                            <div class="card-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="card-title">MCP Manager</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="config-item">
+                                <div class="config-icon">📋</div>
+                                <div class="config-info">
+                                    <div class="config-name">Claude Desktop Config</div>
+                                    <div class="config-tags">
+                                        <span class="tag">AI</span>
+                                        <span class="tag">Desktop</span>
+                                    </div>
+                                </div>
+                                <button class="copy-btn">复制</button>
+                            </div>
+                            <div class="config-item">
+                                <div class="config-icon">🔧</div>
+                                <div class="config-info">
+                                    <div class="config-name">Development Server</div>
+                                    <div class="config-tags">
+                                        <span class="tag">Dev</span>
+                                        <span class="tag">Local</span>
+                                    </div>
+                                </div>
+                                <button class="copy-btn">复制</button>
+                            </div>
+                            <div class="config-item">
+                                <div class="config-icon">🌐</div>
+                                <div class="config-info">
+                                    <div class="config-name">Production API</div>
+                                    <div class="config-tags">
+                                        <span class="tag">Prod</span>
+                                        <span class="tag">API</span>
+                                    </div>
+                                </div>
+                                <button class="copy-btn">复制</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">强大的功能特性</h2>
+                <p class="section-description">为 MCP 配置管理提供全方位的解决方案</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3 class="feature-title">配置管理</h3>
+                    <p class="feature-description">增删改查 MCP 配置，支持 JSON 格式验证，确保配置的正确性和完整性。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3 class="feature-title">智能搜索</h3>
+                    <p class="feature-description">按名称、描述、标签快速搜索配置，支持多种排序方式，快速定位所需配置。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3 class="feature-title">一键复制</h3>
+                    <p class="feature-description">快速复制配置到剪贴板，支持多种格式输出，与各种 MCP 客户端完美兼容。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏷️</div>
+                    <h3 class="feature-title">标签系统</h3>
+                    <p class="feature-description">灵活的标签分类管理，支持自定义标签，让配置组织更加有序。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">使用统计</h3>
+                    <p class="feature-description">记录配置使用次数和最近使用时间，帮助您了解配置的使用情况。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="feature-title">主题切换</h3>
+                    <p class="feature-description">支持明暗模式和多种主题色，打造个性化的使用体验。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📥</div>
+                    <h3 class="feature-title">导入导出</h3>
+                    <p class="feature-description">支持配置的批量导入导出，便于备份和跨设备迁移。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3 class="feature-title">高性能</h3>
+                    <p class="feature-description">基于本地存储的高效数据管理，无容量限制，读写速度更快。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">工作原理</h2>
+                <p class="section-description">简单三步，轻松管理您的 MCP 配置</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">添加配置</h3>
+                        <p class="step-description">点击添加按钮，输入配置名称和 JSON 内容，系统会自动验证格式。</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">管理分类</h3>
+                        <p class="step-description">使用标签系统对配置进行分类，通过搜索功能快速找到所需配置。</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">一键使用</h3>
+                        <p class="step-description">点击复制按钮将配置复制到剪贴板，直接粘贴到 MCP 客户端中使用。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">技术栈</h2>
+                <p class="section-description">基于现代化技术构建，确保稳定性和性能</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon">⚡</div>
+                    <div class="tech-name">Vue 3</div>
+                    <div class="tech-desc">渐进式框架</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🔷</div>
+                    <div class="tech-name">TypeScript</div>
+                    <div class="tech-desc">类型安全</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">⚡</div>
+                    <div class="tech-name">Vite</div>
+                    <div class="tech-desc">构建工具</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🎨</div>
+                    <div class="tech-name">Tailwind CSS</div>
+                    <div class="tech-desc">样式框架</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🔧</div>
+                    <div class="tech-name">Manifest V3</div>
+                    <div class="tech-desc">扩展标准</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">💾</div>
+                    <div class="tech-name">Local Storage</div>
+                    <div class="tech-desc">本地存储</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <div class="download-content">
+                <div class="download-text">
+                    <h2 class="download-title">立即开始使用</h2>
+                    <p class="download-description">
+                        选择适合您的安装方式，开始高效管理您的 MCP 配置
+                    </p>
+                    <div class="download-options">
+                        <a href="#" class="download-btn primary">
+                            <div class="btn-content">
+                                <div class="btn-icon">🌐</div>
+                                <div class="btn-text">
+                                    <div class="btn-title">Chrome 网上应用店</div>
+                                    <div class="btn-subtitle">推荐安装方式</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://github.com/your-username/mcp-manager-extension/releases" class="download-btn secondary" target="_blank">
+                            <div class="btn-content">
+                                <div class="btn-icon">📦</div>
+                                <div class="btn-text">
+                                    <div class="btn-title">GitHub Releases</div>
+                                    <div class="btn-subtitle">开发版本</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="download-image">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <div class="browser-url">chrome://extensions/</div>
+                        </div>
+                        <div class="browser-content">
+                            <div class="extension-card">
+                                <img src="./assets/logo.png" alt="MCP Manager" class="extension-icon">
+                                <div class="extension-info">
+                                    <div class="extension-name">MCP Manager</div>
+                                    <div class="extension-desc">您的私人MCP管理工具</div>
+                                    <div class="extension-version">v1.0.0</div>
+                                </div>
+                                <div class="extension-toggle active"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="./assets/logo.png" alt="MCP Manager" class="footer-logo">
+                    <div class="footer-text">
+                        <div class="footer-title">MCP Manager</div>
+                        <div class="footer-subtitle">您的私人 MCP 管理工具</div>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4 class="footer-heading">产品</h4>
+                        <a href="#features" class="footer-link">功能特性</a>
+                        <a href="#download" class="footer-link">下载安装</a>
+                        <a href="#" class="footer-link">更新日志</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4 class="footer-heading">文档</h4>
+                        <a href="#" class="footer-link">用户指南</a>
+                        <a href="#" class="footer-link">开发文档</a>
+                        <a href="#" class="footer-link">API 参考</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4 class="footer-heading">社区</h4>
+                        <a href="https://github.com/your-username/mcp-manager-extension" class="footer-link" target="_blank">GitHub</a>
+                        <a href="#" class="footer-link">问题反馈</a>
+                        <a href="#" class="footer-link">功能建议</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    © 2024 MCP Manager. Made with ❤️ by 林仔
+                </div>
+                <div class="footer-version">
+                    Version 1.0.0
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./scripts/main.js"></script>
+</body>
+</html>
