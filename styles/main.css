@@ -148,7 +148,7 @@ body::before {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(10, 10, 15, 0.9);
+    background: var(--background);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
     z-index: 1000;
@@ -200,8 +200,6 @@ body::before {
     width: 32px;
     height: 32px;
     border-radius: 8px;
-    box-shadow: var(--glow-primary);
-    transition: var(--transition);
 }
 
 .logo:hover {
@@ -362,11 +360,6 @@ body::before {
     flex-wrap: wrap;
 }
 
-.hero-image {
-    animation: slide-in-right 1s ease-out;
-    position: relative;
-}
-
 /* Floating Particles */
 .particles {
     position: absolute;
@@ -500,7 +493,7 @@ body::before {
 }
 
 .btn-primary:hover {
-    transform: translateY(-4px) scale(1.05);
+    transform: scale(1.05);
     box-shadow: 0 0 40px rgba(0, 212, 255, 0.8);
     background: linear-gradient(135deg, var(--primary-hover), var(--purple-hover));
 }
@@ -526,257 +519,12 @@ body::before {
 
 .btn-secondary:hover {
     color: var(--text-primary);
-    transform: translateY(-4px) scale(1.05);
+    transform: scale(1.05);
     box-shadow: var(--glow-primary);
 }
 
 .btn-secondary:hover::after {
     width: 100%;
-}
-
-.btn-icon {
-    width: 20px;
-    height: 20px;
-    filter: drop-shadow(0 0 5px currentColor);
-}
-
-/* Cyberpunk Hero Card */
-.hero-card {
-    background: var(--surface);
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-xl);
-    overflow: hidden;
-    border: 1px solid var(--border);
-    position: relative;
-    animation: float 6s ease-in-out infinite;
-}
-
-.hero-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg,
-        rgba(0, 212, 255, 0.1) 0%,
-        transparent 50%,
-        rgba(255, 0, 128, 0.1) 100%);
-    opacity: 0;
-    transition: var(--transition);
-}
-
-.hero-card:hover::before {
-    opacity: 1;
-}
-
-.hero-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 0 50px rgba(0, 212, 255, 0.3);
-}
-
-.card-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 1.5rem;
-    background: var(--surface-secondary);
-    border-bottom: 1px solid var(--border);
-    position: relative;
-}
-
-.card-header::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg,
-        transparent,
-        var(--primary),
-        transparent);
-}
-
-.card-dots {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    box-shadow: 0 0 10px currentColor;
-    animation: pulse-glow 2s ease-in-out infinite;
-}
-
-.dot.red {
-    background: var(--error);
-    color: var(--error);
-}
-.dot.yellow {
-    background: var(--warning);
-    color: var(--warning);
-}
-.dot.green {
-    background: var(--success);
-    color: var(--success);
-}
-
-.card-title {
-    font-weight: 600;
-    color: var(--text-primary);
-    font-size: var(--font-size-sm);
-    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
-}
-
-.card-content {
-    padding: 2rem;
-    background: var(--surface);
-}
-
-.config-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-    margin-bottom: 1rem;
-    background: var(--surface-secondary);
-    border: 1px solid var(--border);
-    transition: var(--transition-bounce);
-    position: relative;
-    overflow: hidden;
-}
-
-.config-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg,
-        transparent,
-        rgba(0, 212, 255, 0.1),
-        transparent);
-    transition: var(--transition);
-}
-
-.config-item:hover::before {
-    left: 100%;
-}
-
-.config-item:hover {
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: var(--glow-primary);
-    border-color: var(--primary);
-}
-
-.config-item:last-child {
-    margin-bottom: 0;
-}
-
-.config-icon {
-    font-size: 1.5rem;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, var(--primary-light), rgba(139, 92, 246, 0.1));
-    border-radius: var(--border-radius);
-    border: 1px solid var(--border);
-    box-shadow: var(--glow-primary);
-    position: relative;
-}
-
-.config-icon::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, var(--primary), var(--purple));
-    opacity: 0.1;
-    border-radius: var(--border-radius);
-}
-
-.config-info {
-    flex: 1;
-}
-
-.config-name {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
-    text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
-}
-
-.config-tags {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-}
-
-.tag {
-    background: linear-gradient(135deg, var(--primary-light), rgba(139, 92, 246, 0.1));
-    color: var(--primary);
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: var(--font-size-xs);
-    font-weight: 500;
-    border: 1px solid var(--border);
-    text-shadow: 0 0 5px currentColor;
-    transition: var(--transition);
-}
-
-.tag:hover {
-    background: var(--primary);
-    color: var(--text-primary);
-    box-shadow: var(--glow-primary);
-}
-
-.copy-btn {
-    background: linear-gradient(135deg, var(--primary), var(--purple));
-    color: var(--text-primary);
-    border: 1px solid var(--primary);
-    padding: 0.75rem 1.5rem;
-    border-radius: var(--border-radius);
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition-bounce);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: var(--font-size-xs);
-    box-shadow: var(--glow-primary);
-    position: relative;
-    overflow: hidden;
-}
-
-.copy-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg,
-        transparent,
-        rgba(255, 255, 255, 0.2),
-        transparent);
-    transition: var(--transition);
-}
-
-.copy-btn:hover::before {
-    left: 100%;
-}
-
-.copy-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 30px rgba(0, 212, 255, 0.8);
 }
 
 /* Section Styles */
@@ -790,6 +538,7 @@ section {
 }
 
 .section-title {
+    color: var(--text-primary);
     font-size: var(--font-size-4xl);
     font-weight: 700;
     margin-bottom: 1rem;
@@ -804,7 +553,7 @@ section {
 
 /* Cyberpunk Features Section */
 .features {
-    background: var(--background-secondary);
+    background: var(--surface);
     position: relative;
 }
 
@@ -834,33 +583,13 @@ section {
     padding: 2.5rem;
     border-radius: var(--border-radius-lg);
     border: 1px solid var(--border);
-    transition: var(--transition-bounce);
     text-align: center;
     position: relative;
     overflow: hidden;
 }
 
-.feature-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg,
-        rgba(0, 212, 255, 0.05) 0%,
-        transparent 50%,
-        rgba(139, 92, 246, 0.05) 100%);
-    opacity: 0;
-    transition: var(--transition);
-}
-
-.feature-card:hover::before {
-    opacity: 1;
-}
-
 .feature-card:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: scale(1.02);
     box-shadow: var(--glow-primary);
     border-color: var(--primary);
 }
@@ -982,7 +711,7 @@ section {
 
 .tech-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 2rem;
 }
 
@@ -1095,7 +824,7 @@ section {
     border-radius: var(--border-radius-lg);
     text-decoration: none;
     color: var(--text-primary);
-    transition: var(--transition-bounce);
+    transition: var(--transition);
     backdrop-filter: blur(20px);
     position: relative;
     overflow: hidden;
@@ -1120,14 +849,11 @@ section {
 }
 
 .download-btn:hover {
-    background: var(--surface-secondary);
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: var(--glow-primary);
     border-color: var(--primary);
+    box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.2);
 }
 
 .download-btn.primary {
-    background: linear-gradient(135deg, var(--surface), var(--surface-secondary));
     border-color: var(--primary);
     box-shadow: var(--glow-primary);
 }
@@ -1150,97 +876,6 @@ section {
 .btn-subtitle {
     opacity: 0.8;
     font-size: var(--font-size-sm);
-}
-
-/* Browser Mockup */
-.browser-mockup {
-    background: var(--background);
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-xl);
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.browser-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 1.5rem;
-    background: var(--surface);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.browser-dots {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.browser-url {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    font-size: var(--font-size-sm);
-    color: var(--text-secondary);
-}
-
-.browser-content {
-    padding: 2rem;
-}
-
-.extension-card {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.5rem;
-    background: var(--surface);
-    border-radius: var(--border-radius);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.extension-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: var(--border-radius);
-}
-
-.extension-info {
-    flex: 1;
-}
-
-.extension-name {
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-    color: var(--text-primary);
-}
-
-.extension-desc {
-    color: var(--text-secondary);
-    font-size: var(--font-size-sm);
-    margin-bottom: 0.25rem;
-}
-
-.extension-version {
-    color: var(--text-muted);
-    font-size: var(--font-size-xs);
-}
-
-.extension-toggle {
-    width: 48px;
-    height: 24px;
-    background: var(--success);
-    border-radius: 12px;
-    position: relative;
-}
-
-.extension-toggle::after {
-    content: '';
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    width: 20px;
-    height: 20px;
-    background: white;
-    border-radius: 50%;
 }
 
 /* Footer */
@@ -1304,7 +939,7 @@ section {
 
 .footer-bottom {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding-top: 2rem;
     border-top: 1px solid var(--border);
@@ -1312,11 +947,6 @@ section {
 
 .footer-copyright {
     color: var(--text-secondary);
-}
-
-.footer-version {
-    color: var(--text-muted);
-    font-size: var(--font-size-sm);
 }
 
 /* Cyberpunk Responsive Design */

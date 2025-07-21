@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize all components
     initNavigation();
     initScrollEffects();
-    initAnimations();
-    initCopyButtons();
     initThemeToggle();
     initCyberpunkEffects();
     initParticleSystem();
@@ -76,123 +74,6 @@ function initScrollEffects() {
     });
 }
 
-// Initialize animations
-function initAnimations() {
-    // Add CSS for animations
-    const style = document.createElement('style');
-    style.textContent = `
-        .feature-card,
-        .step,
-        .tech-item {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .feature-card.animate-in,
-        .step.animate-in,
-        .tech-item.animate-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .navbar.scrolled {
-            background: rgba(10, 10, 15, 0.95);
-            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.2);
-        }
-
-        .nav-links.active {
-            display: flex;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: var(--surface);
-            flex-direction: column;
-            padding: 1rem;
-            border-top: 1px solid var(--border);
-            box-shadow: var(--shadow-lg);
-            backdrop-filter: blur(20px);
-        }
-
-        .nav-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .nav-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .nav-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-        }
-    `;
-    document.head.appendChild(style);
-    
-    // Stagger animation for feature cards
-    document.querySelectorAll('.feature-card').forEach((card, index) => {
-        card.style.transitionDelay = `${index * 0.1}s`;
-    });
-    
-    // Stagger animation for tech items
-    document.querySelectorAll('.tech-item').forEach((item, index) => {
-        item.style.transitionDelay = `${index * 0.1}s`;
-    });
-}
-
-// Copy button functionality for demo
-function initCopyButtons() {
-    document.querySelectorAll('.copy-btn').forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Demo copy functionality
-            const configItem = this.closest('.config-item');
-            const configName = configItem.querySelector('.config-name').textContent;
-            
-            // Simulate copying to clipboard
-            const demoConfig = {
-                "mcpServers": {
-                    [configName.toLowerCase().replace(/\s+/g, '-')]: {
-                        "command": "example-command",
-                        "args": ["--config", "example.json"],
-                        "env": {
-                            "API_KEY": "your-api-key"
-                        }
-                    }
-                }
-            };
-            
-            // Try to copy to clipboard
-            if (navigator.clipboard) {
-                navigator.clipboard.writeText(JSON.stringify(demoConfig, null, 2)).then(() => {
-                    showNotification('配置已复制到剪贴板！', 'success');
-                }).catch(() => {
-                    showNotification('复制失败，请手动复制', 'error');
-                });
-            } else {
-                showNotification('您的浏览器不支持自动复制', 'warning');
-            }
-            
-            // Visual feedback
-            const originalText = this.textContent;
-            this.textContent = '已复制';
-            this.style.background = 'var(--success)';
-            
-            setTimeout(() => {
-                this.textContent = originalText;
-                this.style.background = 'var(--primary)';
-            }, 2000);
-        });
-    });
-}
-
 // Theme toggle functionality
 function initThemeToggle() {
     // Check for saved theme preference or default to 'auto'
@@ -252,8 +133,8 @@ function applyTheme(theme) {
 }
 
 function toggleTheme() {
-    const currentTheme = localStorage.getItem('theme') || 'auto';
-    const themes = ['light', 'dark', 'auto'];
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    const themes = ['light', 'dark'];
     const currentIndex = themes.indexOf(currentTheme);
     const nextTheme = themes[(currentIndex + 1) % themes.length];
     
@@ -264,8 +145,7 @@ function toggleTheme() {
 function getThemeDisplayName(theme) {
     const names = {
         'light': '浅色模式',
-        'dark': '深色模式',
-        'auto': '跟随系统'
+        'dark': '深色模式'
     };
     return names[theme] || theme;
 }
@@ -502,7 +382,7 @@ console.log(`
 🎉 欢迎来到 MCP Manager 官网！
 
 如果您是开发者，欢迎查看我们的源代码：
-https://github.com/your-username/mcp-manager-extension
+https://github.com/Duosl/mcp-manager-website
 
 技术栈：
 - Vue 3 + TypeScript + Vite

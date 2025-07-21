@@ -11,11 +11,10 @@
     <meta property="og:title" content="MCP Manager - 您的私人 MCP 管理工具">
     <meta property="og:description" content="专业的 MCP 配置管理浏览器扩展">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="./assets/og-image.png">
+    <meta property="og:image" content="./assets/logo.png">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="./assets/logo.png">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,9 +35,9 @@
             <div class="nav-links">
                 <a href="#features" class="nav-link">功能特性</a>
                 <a href="#how-it-works" class="nav-link">工作原理</a>
+                <a href="#tech-stack" class="nav-link">技术栈</a>
                 <a href="#download" class="nav-link">下载安装</a>
-                <a href="#docs" class="nav-link">文档</a>
-                <a href="https://github.com/your-username/mcp-manager-extension" class="nav-link" target="_blank">GitHub</a>
+                <a href="https://github.com/Duosl/mcp-manager-website" class="nav-link" target="_blank">GitHub</a>
             </div>
             <div class="nav-toggle">
                 <span></span>
@@ -71,61 +70,9 @@
                     </p>
                     <div class="hero-buttons">
                         <a href="#download" class="btn btn-primary">
-                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                <polyline points="7,10 12,15 17,10"/>
-                                <line x1="12" y1="15" x2="12" y2="3"/>
-                            </svg>
                             立即下载
                         </a>
                         <a href="#features" class="btn btn-secondary">了解更多</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="hero-card">
-                        <div class="card-header">
-                            <div class="card-dots">
-                                <span class="dot red"></span>
-                                <span class="dot yellow"></span>
-                                <span class="dot green"></span>
-                            </div>
-                            <span class="card-title">MCP Manager</span>
-                        </div>
-                        <div class="card-content">
-                            <div class="config-item">
-                                <div class="config-icon">📋</div>
-                                <div class="config-info">
-                                    <div class="config-name">Claude Desktop Config</div>
-                                    <div class="config-tags">
-                                        <span class="tag">AI</span>
-                                        <span class="tag">Desktop</span>
-                                    </div>
-                                </div>
-                                <button class="copy-btn">复制</button>
-                            </div>
-                            <div class="config-item">
-                                <div class="config-icon">🔧</div>
-                                <div class="config-info">
-                                    <div class="config-name">Development Server</div>
-                                    <div class="config-tags">
-                                        <span class="tag">Dev</span>
-                                        <span class="tag">Local</span>
-                                    </div>
-                                </div>
-                                <button class="copy-btn">复制</button>
-                            </div>
-                            <div class="config-item">
-                                <div class="config-icon">🌐</div>
-                                <div class="config-info">
-                                    <div class="config-name">Production API</div>
-                                    <div class="config-tags">
-                                        <span class="tag">Prod</span>
-                                        <span class="tag">API</span>
-                                    </div>
-                                </div>
-                                <button class="copy-btn">复制</button>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -218,7 +165,7 @@
     </section>
 
     <!-- Tech Stack Section -->
-    <section class="tech-stack">
+    <section id="tech-stack" class="tech-stack">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">技术栈</h2>
@@ -269,47 +216,24 @@
                         选择适合您的安装方式，开始高效管理您的 MCP 配置
                     </p>
                     <div class="download-options">
-                        <a href="#" class="download-btn primary">
-                            <div class="btn-content">
-                                <div class="btn-icon">🌐</div>
-                                <div class="btn-text">
-                                    <div class="btn-title">Chrome 网上应用店</div>
-                                    <div class="btn-subtitle">推荐安装方式</div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="https://github.com/your-username/mcp-manager-extension/releases" class="download-btn secondary" target="_blank">
+                        <a href="https://github.com/Duosl/mcp-manager-website/releases" class="download-btn primary" target="_blank">
                             <div class="btn-content">
                                 <div class="btn-icon">📦</div>
                                 <div class="btn-text">
                                     <div class="btn-title">GitHub Releases</div>
-                                    <div class="btn-subtitle">开发版本</div>
+                                    <div class="btn-subtitle">推荐安装方式</div>
                                 </div>
                             </div>
                         </a>
-                    </div>
-                </div>
-                <div class="download-image">
-                    <div class="browser-mockup">
-                        <div class="browser-header">
-                            <div class="browser-dots">
-                                <span class="dot red"></span>
-                                <span class="dot yellow"></span>
-                                <span class="dot green"></span>
-                            </div>
-                            <div class="browser-url">chrome://extensions/</div>
-                        </div>
-                        <div class="browser-content">
-                            <div class="extension-card">
-                                <img src="./assets/logo.png" alt="MCP Manager" class="extension-icon">
-                                <div class="extension-info">
-                                    <div class="extension-name">MCP Manager</div>
-                                    <div class="extension-desc">您的私人MCP管理工具</div>
-                                    <div class="extension-version">v1.0.0</div>
+                        <a href="#" class="download-btn secondary">
+                            <div class="btn-content">
+                                <div class="btn-icon">🌐</div>
+                                <div class="btn-text">
+                                    <div class="btn-title">Chrome 网上应用店</div>
+                                    <div class="btn-subtitle">暂未上线</div>
                                 </div>
-                                <div class="extension-toggle active"></div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -334,26 +258,23 @@
                         <a href="#download" class="footer-link">下载安装</a>
                         <a href="#" class="footer-link">更新日志</a>
                     </div>
-                    <div class="footer-section">
+                    <!-- <div class="footer-section">
                         <h4 class="footer-heading">文档</h4>
                         <a href="#" class="footer-link">用户指南</a>
                         <a href="#" class="footer-link">开发文档</a>
                         <a href="#" class="footer-link">API 参考</a>
-                    </div>
+                    </div> -->
                     <div class="footer-section">
                         <h4 class="footer-heading">社区</h4>
-                        <a href="https://github.com/your-username/mcp-manager-extension" class="footer-link" target="_blank">GitHub</a>
-                        <a href="#" class="footer-link">问题反馈</a>
-                        <a href="#" class="footer-link">功能建议</a>
+                        <a href="https://github.com/Duosl/mcp-manager-website" class="footer-link" target="_blank">GitHub</a>
+                        <a href="https://github.com/Duosl/mcp-manager-website/issues" class="footer-link">问题反馈</a>
+                        <a href="https://github.com/Duosl/mcp-manager-website/issues" class="footer-link">功能建议</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
                 <div class="footer-copyright">
-                    © 2024 MCP Manager. Made with ❤️ by 林仔
-                </div>
-                <div class="footer-version">
-                    Version 1.0.0
+                    © 2025 MCP Manager Chrome Extension. Made with by 林仔
                 </div>
             </div>
         </div>

@@ -1,0 +1,32 @@
+name: Auto Release from Binary
+
+on:
+  # 触发条件：当push带有v开头的标签时（如v1.0.0）
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      # 1. 检出代码
+      - uses: actions/checkout@v3
+
+      # 2. 上传二进制文件为Release Asset
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          # 使用GitHub Token认证
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # 自动生成版本号（基于标签，如v1.0.0）
+          tag_name: ${{ github.ref_name }}
+          # 是否为草稿（false表示直接发布）
+          draft: false
+          # 是否为预发布（false表示正式发布）
+          prerelease: false
+          files: |
+            ./package/mcp-manager-extension-${{ github.ref_name }}.zip
