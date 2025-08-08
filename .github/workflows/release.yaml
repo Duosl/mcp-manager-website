@@ -1,4 +1,4 @@
-name: Auto Release from Binary
+name: auto release
 
 on:
   # 允许手动触发

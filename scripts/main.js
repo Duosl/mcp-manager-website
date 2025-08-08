@@ -80,29 +80,13 @@ function initThemeToggle() {
     const savedTheme = localStorage.getItem('theme') || 'auto';
     applyTheme(savedTheme);
     
-    // Create theme toggle button (optional)
-    const themeToggle = document.createElement('button');
-    themeToggle.className = 'theme-toggle';
-    themeToggle.innerHTML = '🌓';
-    themeToggle.style.cssText = `
-        position: fixed;
-        bottom: 2rem;
-        right: 2rem;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        border: none;
-        background: var(--primary);
-        color: white;
-        font-size: 1.5rem;
-        cursor: pointer;
-        box-shadow: var(--shadow-lg);
-        transition: var(--transition);
-        z-index: 1000;
-    `;
-    
-    themeToggle.addEventListener('click', toggleTheme);
-    document.body.appendChild(themeToggle);
+    // Use existing theme toggle button in navbar
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+        // Update button icon based on current theme
+        updateThemeIcon(savedTheme);
+        themeToggle.addEventListener('click', toggleTheme);
+    }
 }
 
 function applyTheme(theme) {
@@ -139,7 +123,20 @@ function toggleTheme() {
     const nextTheme = themes[(currentIndex + 1) % themes.length];
     
     applyTheme(nextTheme);
+    updateThemeIcon(nextTheme);
     showNotification(`主题已切换到 ${getThemeDisplayName(nextTheme)}`, 'success');
+}
+
+function updateThemeIcon(theme) {
+    const themeIcon = document.querySelector('.theme-icon');
+    if (themeIcon) {
+        // Use sun for light mode, moon for dark mode
+        if (theme === 'light') {
+            themeIcon.textContent = '☀️';
+        } else {
+            themeIcon.textContent = '🌙';
+        }
+    }
 }
 
 function getThemeDisplayName(theme) {
@@ -376,18 +373,3 @@ document.addEventListener('mousemove', debounce(function(e) {
         document.documentElement.style.setProperty('--mouse-y', y);
     }
 }, 16));
-
-// Console message for developers
-console.log(`
-🎉 欢迎来到 MCP Manager 官网！
-
-如果您是开发者，欢迎查看我们的源代码：
-https://github.com/Duosl/mcp-manager-website
-
-技术栈：
-- Vue 3 + TypeScript + Vite
-- Tailwind CSS 4
-- Chrome Extension Manifest V3
-
-Made with ❤️ by 林仔
-`);
